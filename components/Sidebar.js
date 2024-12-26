@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Suspense } from "react";
-// import { getAllNotes } from "@/lib/redis";
+// import { getAllNotes } from "@/lib/strapi";
 import SidebarNoteList from "@/components/SidebarNoteList";
 import EditButton from "./EditButton";
 import NoteListSkeleton from "./NoteListSkeleton";

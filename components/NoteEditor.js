@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import NotePreview from "@/components/NotePreview";
-import { useFormState } from "react-dom";
-import { deleteNote, saveNote } from "../app/[lng]/action";
+// import { useFormState } from "react-dom";
+import { useActionState } from "react";
+import { deleteNote, saveNote } from "@/actions";
 import SaveButton from "@/components/SaveButton";
 import DeleteButton from "@/components/DeleteButton";
 
@@ -12,8 +13,8 @@ const initialState = {
 };
 
 export default function NoteEditor({ noteId, initialTitle, initialBody }) {
-  const [saveState, saveFormAction] = useFormState(saveNote, initialState);
-  const [delState, delFormAction] = useFormState(deleteNote, initialState);
+  const [saveState, saveFormAction] = useActionState(saveNote, initialState);
+  const [delState, delFormAction] = useActionState(deleteNote, initialState);
 
   const [title, setTitle] = useState(initialTitle);
   const [body, setBody] = useState(initialBody);

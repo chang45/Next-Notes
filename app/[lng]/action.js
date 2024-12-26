@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { addNote, updateNote, delNote } from "@/lib/redis";
+import { addNote, updateNote, delNote } from "@/lib/strapi";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { stat, mkdir, writeFile } from "fs/promises";
@@ -22,7 +22,7 @@ export async function saveNote(prevState, formData) {
   const data = {
     title: formData.get("title"),
     content: formData.get("body"),
-    updateTime: new Date(),
+    // updateTime: new Date(),
   };
 
   // 校验数据
